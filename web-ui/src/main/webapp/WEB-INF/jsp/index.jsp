@@ -27,7 +27,7 @@
         <h1>The trader</h1>
 
         <p>Welcome to the demo of Self-Service. This sample is created to show case self-service capabilities. Next to
-            that we wanted to create a cool app with a nice front-end that we can really use as a showcase.</p>
+            that we wanted to create a cool application with a nice front-end that we can really use as a showcase.</p>
 
         <p>If you are logged in, you can go to your dashboard.</p>
 
