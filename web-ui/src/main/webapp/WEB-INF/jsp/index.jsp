@@ -17,7 +17,7 @@
 
 <html>
 <head>
-    <title>Welcome to the axon trader</title>
+    <title>Welcome to the axon trader demo</title>
 </head>
 <body>
 <content tag="title">Welcome</content>
