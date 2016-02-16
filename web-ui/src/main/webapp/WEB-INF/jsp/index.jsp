@@ -35,7 +35,7 @@
     </div>
 </content>
 
-<p>There are a few things implemented. You can choose the company to trade stock items for. Before you can
+<p>There are a few things implemented already. You can choose the company to trade stock items for. Before you can
     use them you need to login.</p>
 
 <div class="row">
