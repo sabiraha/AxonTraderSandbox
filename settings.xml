@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  
+  <!--<localRepository>D:\apache-maven-3.0.4\repository</localRepository>-->
+
+  <offline>false</offline>
+
+  <pluginGroups>
+    
+  </pluginGroups>
+
+  <servers>
+    
+    <server>
+      <id>releases</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+	
+    <server>
+      <id>snapshots</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+
+    <!--<server>
+      <id>Tomcat</id>
+      <username>tomcat</username>
+      <password>s3cret</password>
+    </server>-->
+
+  </servers>
+  <mirrors>
+  </mirrors>
+  <profiles>
+      <profile>
+      <id>sonar</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <!-- FOR MYSQL -->
+        <sonar.jdbc.url>jdbc:mysql://ec2-54-169-227-19.ap-southeast-1.compute.amazonaws.com:3306/sonar?useUnicode=true&amp;characterEncoding=utf8</sonar.jdbc.url>
+        <sonar.jdbc.driverClassName>com.mysql.jdbc.Driver</sonar.jdbc.driverClassName>
+        <sonar.jdbc.username>sonar</sonar.jdbc.username>
+        <sonar.jdbc.password>sonar</sonar.jdbc.password>
+
+         <!-- SERVER ON A REMOTE HOST -->
+        <sonar.host.url>http://ec2-54-169-227-19.ap-southeast-1.compute.amazonaws.com:9000</sonar.host.url>
+
+      </properties>
+    </profile>
+      
+      <profile>
+      <id>dev</id>
+      <!-- Dev Env. Properties -->
+      <properties>
+        <profile.name>dev</profile.name>
+        <!-- Cargo Properties -->
+        <containerId>tomcat8x</containerId>
+        <!--<protocol>https</protocol>-->
+        <hostname>ec2-54-169-227-19.ap-southeast-1.compute.amazonaws.com</hostname>
+        <port>8091</port>
+        <username>tomcat</username>
+        <password>s3cret</password>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>qa</id>
+      <!-- qa Env. Properties -->
+      <properties>
+        <profile.name>qa</profile.name>
+        <!-- Cargo Properties -->
+        <containerId>tomcat8x</containerId>
+        <!--<protocol>https</protocol>-->
+        <hostname>ec2-54-169-227-19.ap-southeast-1.compute.amazonaws.com</hostname>
+        <port>8092</port>
+        <username>tomcat</username>
+        <password>s3cret</password>
+      </properties>
+    </profile>
+    <profile>
+      <id>perf</id>
+      <!-- perf Env. Properties -->
+      <properties>
+        <profile.name>perf</profile.name>
+        <!-- Cargo Properties -->
+        <containerId>tomcat8x</containerId>
+        <!--<protocol>https</protocol>-->
+        <hostname>ec2-54-169-227-19.ap-southeast-1.compute.amazonaws.com</hostname>
+        <port>8093</port>
+        <username>tomcat</username>
+        <password>s3cret</password>
+      </properties>
+    </profile>
+    <profile>
+      <id>stage</id>
+      <!-- stag Env. Properties -->
+      <properties>
+        <profile.name>stage</profile.name>
+        <!-- Cargo Properties -->
+        <containerId>tomcat8x</containerId>
+        <!--<protocol>https</protocol>-->
+        <hostname>ec2-54-169-227-19.ap-southeast-1.compute.amazonaws.com</hostname>
+        <port>8094</port>
+        <username>tomcat</username>
+        <password>s3cret</password>
+      </properties>
+    </profile>
+    <profile>
+      <id>prod</id>
+      <!-- prod Env. Properties -->
+      <properties>
+        <profile.name>prod</profile.name>
+        <!-- Cargo Properties -->
+        <containerId>tomcat8x</containerId>
+        <!--<protocol>https</protocol>-->
+        <hostname>ec2-54-169-227-19.ap-southeast-1.compute.amazonaws.com</hostname>
+        <port>8095</port>
+        <username>tomcat</username>
+        <password>s3cret</password>
+      </properties>
+    </profile>
+  
+   <profile> 
+      <id>default</id> 
+      <activation> 
+        <activeByDefault>true</activeByDefault> 
+      </activation> 
+      <properties> 
+        <!--<repos.url>http://ec2-54-169-227-19.ap-southeast-1.compute.amazonaws.com:9081/nexus/content/repositories/releases/</repos.url> -->
+		<binaryRepositoryUrl>http://ec2-54-169-227-19.ap-southeast-1.compute.amazonaws.com:9081/nexus/content/repositories/releases/</binaryRepositoryUrl>
+      </properties> 
+      
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>dev</activeProfile>
+  </activeProfiles>
+</settings>
